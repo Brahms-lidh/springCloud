@@ -1,0 +1,20 @@
+server:
+  port: 9090
+  
+spring:
+  application:
+    name: springcloud-zuul
+ 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone:  http://localhost:9001/eureka/
+  instance:
+    prefer-ip-address: true
+                   
+zuul:
+  routes:
+    SPRINGCLOUD-BUSI:
+       path: /api/business
+       service-id: SPRINGCLOUD-BUSI
+       stripPrefix: false
